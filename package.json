@@ -1,0 +1,26 @@
+{
+  "name": "tkg",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=22.13.0 <25.0.0",
+    "npm": ">=6.0.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "yarn workspace app build",
+    "dev": "yarn workspace app dev",
+    "lint": "yarn workspace app lint",
+    "test": "yarn workspace app test"
+  },
+  "devDependencies": {
+    "lerna": "^10.0.0",
+    "nx": "^22.0.0",
+    "yarn": "^1.22.22"
+  }
+}
