@@ -7,5 +7,6 @@
   "ignorePresets": [
     "group:monorepos",
     "group:recommended"
-  ]
+  ],
+  "recreateWhen": "always"
 }
