@@ -1,6 +1,11 @@
 {
   "$schema": "https://renovatebot.com",
+  "branchPrefix": "npm/",
   "extends": [
     "config:recommended"
+  ],
+  "ignorePresets": [
+    "group:monorepos",
+    "group:recommended"
   ]
 }
