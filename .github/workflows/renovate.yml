@@ -1,0 +1,23 @@
+name: Renovate
+on:
+  # Allows manual triggering
+  workflow_dispatch:
+  # Runs automatically every hour
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v40.1.12
+        with:
+          configurationFile: .github/renovate.json
+          token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          # Required for fetching release notes/changelogs from open-source public repos
+          RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
